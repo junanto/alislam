@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petualangan Anak Saleh - Al-Islam Kelas 1</title>
+<style>
+:root{--ink:#26334a;--pink:#ff78ad;--yellow:#ffd95c;--blue:#62c8f5;--green:#78dca1;--purple:#a994ff;--paper:#fffdf5}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#c8f2ff,#fff0bd 55%,#ffe0ee);min-height:100vh}
+button,input{font:inherit}
+button{border:0;cursor:pointer;font-weight:800;border-radius:16px;padding:12px 18px;box-shadow:0 4px 0 rgba(38,51,74,.16);transition:.15s}
+button:hover{transform:translateY(-2px);filter:brightness(1.03)}
+button:active{transform:translateY(2px);box-shadow:none}
+.primary{background:#ffca48;color:#543b00}.blue{background:#69cdf5;color:#12394d}.pink{background:#ff8db8;color:#57213a}.green{background:#75dda0;color:#16472c}.soft{background:#edf5ff;color:#30445c}
+.wrap{max-width:980px;margin:auto;padding:18px}
+header{text-align:center;padding:14px 8px 8px}
+.logo{display:inline-block;background:#fff;border:4px solid #fff;border-radius:24px;padding:8px 20px;box-shadow:0 6px 0 #c4e7ee}
+h1{font-size:clamp(2rem,6vw,3.5rem);margin:6px 0;color:#275b9b;text-shadow:2px 3px #fff}
+.subtitle{font-weight:800;color:#9a4e83}
+.panel{background:rgba(255,255,255,.94);border:4px solid white;border-radius:26px;padding:clamp(16px,3vw,28px);box-shadow:0 8px 0 rgba(70,112,153,.13);margin:16px 0}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
+.hero-art{font-size:clamp(4rem,12vw,7rem);text-align:center;background:linear-gradient(145deg,#d6f5ff,#fff0c8);border-radius:24px;padding:20px}
+h2{margin:4px 0 12px;color:#285c9b}
+label{font-weight:800;display:block;margin:10px 0 5px}
+input{width:100%;padding:13px;border:2px solid #b9d7ec;border-radius:13px;background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
+.small{font-size:.92rem;color:#5d6b7d}
+.hidden{display:none!important}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{background:#eef7ff;padding:8px 13px;border-radius:99px;font-weight:800}
+.progress{height:13px;background:#e9eef6;border-radius:99px;overflow:hidden;margin:12px 0}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#69d9a1,#5fc8f4);transition:width .3s}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tab{background:#edf4ff;color:#345}.tab.active{background:#285c9b;color:white}
+.story{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+.avatar{height:130px;border-radius:22px;display:grid;place-items:center;font-size:4.5rem;background:linear-gradient(145deg,#fff0bb,#d7f3ff);position:relative}
+.face-note{position:absolute;bottom:6px;font-size:.68rem;background:#fff9;padding:3px 7px;border-radius:9px}
+.fact{background:#fff8d9;border-left:7px solid #ffc94e;border-radius:14px;padding:13px;margin:12px 0}
+.lesson{background:#effcf3;border-radius:14px;padding:12px;margin-top:10px}
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.choice{background:#f1f7ff;border:3px solid #d7e8f7;box-shadow:none;min-height:76px;font-size:1rem}
+.choice.selected{border-color:#3987d4;background:#e0f4ff}
+.choice.correct{background:#dcffe8;border-color:#45bd73}
+.choice.wrong{background:#ffe1e8;border-color:#f06b88}
+.feedback{padding:12px;border-radius:14px;font-weight:800;margin:12px 0}
+.feedback.good{background:#ddffe9;color:#17623a}.feedback.bad{background:#ffe5eb;color:#9b2846}
+.match-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.match-col{display:grid;gap:9px}
+.match-item{background:#f3f7ff;border:2px solid #d5e6f8;box-shadow:none;text-align:left}
+.match-item.picked{border-color:#8a72e9;background:#f0eaff}
+.match-item.done{background:#dcffe8;border-color:#5ac582}
+.stars{font-size:2rem;letter-spacing:5px;color:#f5b900}
+.result{text-align:center}
+.certificate{border:7px double #f3c64e;border-radius:20px;padding:25px;background:#fffdf1}
+footer{text-align:center;padding:20px;color:#61748a;font-size:.85rem}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{padding:8px}.story{grid-template-columns:1fr}.avatar{height:100px}.choice-grid{grid-template-columns:1fr}.match-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <div class="logo">🌈 ⭐ 🕌 ⭐ 🌈</div>
+ <h1>Petualangan Anak Saleh</h1>
+ <div class="subtitle">Game Al-Islam • Kelas 1 SD</div>
+</header>
+
+<section id="home" class="panel hero">
+ <div>
+  <h2>Halo, Sahabat Saleh! 👋</h2>
+  <p>Yuk, bertualang mengenal kisah Nabi Adam a.s., Nabi Idris a.s., dan Nabi Nuh a.s. Selesaikan tantangan dan kumpulkan bintang!</p>
+  <label for="student">Nama siswa</label><input id="student" placeholder="Tuliskan namamu">
+  <label for="kelas">Kelas</label><input id="kelas" placeholder="Contoh: 1A">
+  <p class="small">Siapkan semangat terbaikmu. Kamu pasti bisa!</p>
+  <button class="primary" onclick="startGame()">🚀 MULAI PETUALANGAN</button>
+ </div>
+ <div class="hero-art">🧒🏻 📚 🚢<div style="font-size:1rem;font-weight:800">Belajar • Bermain • Berakhlak baik</div></div>
+</section>
+
+<section id="game" class="hidden">
+ <div class="panel">
+  <div class="topline"><span class="pill" id="playerTag">🌟 Sahabat Saleh</span><span class="pill">⭐ Bintang: <b id="stars">0</b></span></div>
+  <div class="progress"><span id="bar"></span></div>
+  <div class="tabs">
+   <button class="tab active" id="tab0" onclick="showLesson(0)">1. Nabi Adam</button>
+   <button class="tab" id="tab1" onclick="showLesson(1)">2. Nabi Idris</button>
+   <button class="tab" id="tab2" onclick="showLesson(2)">3. Nabi Nuh</button>
+   <button class="tab" id="tab3" onclick="showMatch()">4. Cocokkan</button>
+   <button class="tab" id="tab4" onclick="showQuiz()">5. Kuis</button>
+  </div>
+  <div id="content"></div>
+ </div>
+</section>
+
+<section id="finish" class="panel result hidden">
+ <div class="stars">🏆 ⭐ 🌟 ⭐ 🏆</div>
+ <h2>Hebat Sekali, Sahabat Saleh!</h2>
+ <div class="certificate">
+  <h2>🎖️ SERTIFIKAT ANAK SALEH 🎖️</h2>
+  <p>Dengan bangga diberikan kepada</p>
+  <h1 id="certName" style="font-size:2.2rem"></h1>
+  <p id="certClass"></p>
+  <p>Telah menyelesaikan Petualangan Al-Islam tentang Nabi Adam a.s., Nabi Idris a.s., dan Nabi Nuh a.s.</p>
+  <h2 id="finalScore"></h2>
+  <div class="stars" id="finalStars"></div>
+  <p>Teruslah menjadi anak yang jujur, rajin, sabar, dan taat kepada Allah.</p>
+ </div>
+ <p><button class="primary" onclick="window.print()">🖨️ Cetak Sertifikat</button> <button class="blue" onclick="location.reload()">🔄 Main Lagi</button></p>
+</section>
+<footer>Belajar dengan gembira • Jadilah anak jujur, rajin, sabar, dan taat 🌻</footer>
+</div>
+<script>
+const lessons=[
+ {name:"Nabi Adam a.s.",emoji:"🌿",title:"Manusia pertama",story:"Nabi Adam a.s. adalah manusia pertama yang diciptakan Allah Swt. Allah menciptakan Nabi Adam dari tanah. Nabi Adam pernah melakukan kesalahan, lalu menyadarinya dan memohon ampun kepada Allah.",moral:"Jika berbuat salah, beranilah mengakui kesalahan, meminta maaf, dan memohon ampun kepada Allah.",traits:["Mengakui kesalahan","Meminta maaf","Memohon ampun kepada Allah"]},
+ {name:"Nabi Idris a.s.",emoji:"📚",title:"Rajin belajar",story:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu. Beliau mengajarkan kebaikan dan menjadi teladan dalam ketekunan serta kejujuran.",moral:"Ayo rajin belajar, membaca, menulis, dan berkata jujur setiap hari.",traits:["Rajin belajar","Tekun","Jujur"]},
+ {name:"Nabi Nuh a.s.",emoji:"🚢",title:"Nabi yang sabar",story:"Nabi Nuh a.s. mengajak kaumnya menyembah Allah. Beliau tetap sabar walaupun banyak yang tidak mau mendengarkan. Atas perintah Allah, Nabi Nuh membuat kapal besar. Allah menyelamatkan orang-orang beriman dari banjir besar.",moral:"Kita harus sabar, taat kepada Allah, mendengarkan nasihat baik, dan tidak mudah menyerah.",traits:["Sabar","Taat kepada Allah","Tidak mudah menyerah"]}
+];
+const questions=[
+ {q:"Siapakah manusia pertama yang diciptakan Allah?",o:["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],a:0,why:"Nabi Adam a.s. adalah manusia pertama yang diciptakan Allah."},
+ {q:"Nabi Adam a.s. diciptakan Allah dari ....",o:["Air","Tanah","Kayu"],a:1,why:"Allah menciptakan Nabi Adam a.s. dari tanah."},
+ {q:"Apa yang sebaiknya kita lakukan jika berbuat salah?",o:["Menyalahkan teman","Berpura-pura tidak tahu","Mengakui kesalahan dan meminta maaf"],a:2,why:"Kita harus berani mengakui kesalahan dan meminta maaf."},
+ {q:"Nabi yang dikenal sebagai teladan dalam ilmu dan ketekunan adalah ....",o:["Nabi Idris a.s.","Nabi Nuh a.s.","Nabi Adam a.s."],a:0,why:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu."},
+ {q:"Sikap baik yang harus kita tiru dari Nabi Idris a.s. adalah ....",o:["Malas belajar","Rajin belajar","Suka berbohong"],a:1,why:"Kita harus rajin belajar dan tekun."},
+ {q:"Jika berbicara kepada orang lain, kita harus ....",o:["Jujur","Berbohong","Mengejek"],a:0,why:"Anak saleh selalu berusaha berkata jujur."},
+ {q:"Nabi yang membuat kapal besar atas perintah Allah adalah ....",o:["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],a:2,why:"Nabi Nuh a.s. membuat kapal besar atas perintah Allah."},
+ {q:"Nabi Nuh a.s. mengajarkan kita untuk bersikap ....",o:["Sabar","Pemarah","Sombong"],a:0,why:"Nabi Nuh a.s. sangat sabar dalam mengajak kaumnya kepada kebaikan."},
+ {q:"Ketika guru memberi nasihat yang baik, kita sebaiknya ....",o:["Mengabaikan","Mendengarkan","Berlari pergi"],a:1,why:"Mendengarkan nasihat baik adalah perilaku terpuji."},
+ {q:"Kepada siapakah kita harus selalu taat?",o:["Allah Swt.","Mainan","Keinginan buruk"],a:0,why:"Kita harus taat kepada Allah Swt. dan menjalankan perintah-Nya."},
+ {q:"Siapakah istri Nabi Adam a.s.?",o:["Hawa","Maryam","Asiyah"],a:0,why:"Istri Nabi Adam a.s. bernama Hawa."},
+ {q:"Nabi Adam a.s. dan Hawa tinggal di ....",o:["Laut","Surga","Gunung"],a:1,why:"Nabi Adam a.s. dan Hawa tinggal di surga sebelum diturunkan ke bumi."},
+ {q:"Apa yang dilakukan Nabi Adam setelah menyadari kesalahannya?",o:["Menyombongkan diri","Menyalahkan orang lain","Memohon ampun kepada Allah"],a:2,why:"Nabi Adam a.s. menyadari kesalahannya dan memohon ampun kepada Allah."},
+ {q:"Sikap yang baik saat belajar adalah ....",o:["Tekun dan sungguh-sungguh","Mengganggu teman","Tidak memperhatikan"],a:0,why:"Kita meneladani ketekunan dengan belajar sungguh-sungguh."},
+ {q:"Nabi Idris a.s. memberi teladan agar kita mencintai ....",o:["Pertengkaran","Ilmu dan kebaikan","Kemalasan"],a:1,why:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu dan mengajarkan kebaikan."},
+ {q:"Nabi Nuh a.s. mengajak kaumnya untuk ....",o:["Menyembah Allah","Menyembah kapal","Bertengkar"],a:0,why:"Nabi Nuh a.s. mengajak kaumnya menyembah Allah."},
+ {q:"Apa yang dibuat Nabi Nuh atas perintah Allah?",o:["Rumah kecil","Jembatan","Kapal besar"],a:2,why:"Nabi Nuh a.s. membuat kapal besar atas perintah Allah."},
+ {q:"Saat pekerjaan terasa sulit, kita sebaiknya ....",o:["Langsung menyerah","Tetap berusaha dan sabar","Marah kepada teman"],a:1,why:"Kisah Nabi Nuh a.s. mengajarkan kita untuk sabar dan tidak mudah menyerah."},
+ {q:"Siapa yang menyelamatkan Nabi Nuh dan orang-orang beriman dari banjir besar?",o:["Allah Swt.","Penduduk kota","Pedagang"],a:0,why:"Allah Swt. menyelamatkan Nabi Nuh dan orang-orang beriman."},
+ {q:"Kapal Nabi Nuh a.s. digunakan saat terjadi ....",o:["Musim kemarau","Banjir besar","Musim panen"],a:1,why:"Allah memerintahkan Nabi Nuh membuat kapal untuk menghadapi banjir besar."}
+];
+let student="",kelas="",score=0,quizCorrect=0,answered=new Set(),qIndex=0,matchLeft=null,matched=new Set(),quizDone=false,activeQuestions=[];
+function startGame(){student=document.getElementById('student').value.trim();kelas=document.getElementById('kelas').value.trim();if(!student){alert("Yuk, tulis namamu dulu!");return}document.getElementById('home').classList.add('hidden');document.getElementById('game').classList.remove('hidden');document.getElementById('playerTag').textContent="🌟 "+student+" • "+(kelas||"Kelas 1");showLesson(0)}
+function update(){document.getElementById('stars').textContent=score;document.getElementById('bar').style.width=(answered.size/10*100)+"%"}
+function tabs(n){for(let i=0;i<5;i++)document.getElementById('tab'+i).classList.toggle('active',i===n)}
+function showLesson(i){tabs(i);let l=lessons[i];document.getElementById('content').innerHTML=`<div class="story"><div class="avatar">${l.emoji}<span class="face-note">Ilustrasi simbolik</span></div><div><h2>${l.name}</h2><h3>${l.title} ✨</h3><p>${l.story}</p></div></div><div class="fact"><b>💡 Pesan kebaikan</b><br>${l.moral}</div><div class="lesson"><b>🌟 Teladan yang bisa kita lakukan:</b><ul>${l.traits.map(t=>`<li>${t}</li>`).join('')}</ul></div><p><button class="primary" onclick="${i<2?`showLesson(${i+1})`:'showMatch()'}">Lanjut ➜</button></p>`}
+function showMatch(){tabs(3);matchLeft=null;matched.clear();const left=["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],right=["Sabar dan tidak mudah menyerah","Berani mengakui kesalahan","Rajin belajar dan tekun"];document.getElementById('content').innerHTML=`<h2>🧩 Permainan Cocokkan Pasangan</h2><p>Pilih nama nabi di sebelah kiri, lalu pilih sifat teladannya di sebelah kanan.</p><div class="match-list"><div class="match-col" id="left">${left.map((x,i)=>`<button class="match-item" id="L${i}" onclick="pickLeft(${i})">${x}</button>`).join('')}</div><div class="match-col" id="right">${right.map((x,i)=>`<button class="match-item" id="R${i}" onclick="pickRight(${i})">${x}</button>`).join('')}</div></div><div id="matchFeedback" class="feedback hidden"></div><p><button class="primary" onclick="showQuiz()">Lanjut ke Kuis ➜</button></p>`}
+function pickLeft(i){if(matched.has(i))return;matchLeft=i;document.querySelectorAll('#left button').forEach(b=>b.classList.remove('picked'));document.getElementById('L'+i).classList.add('picked')}
+function pickRight(i){if(matchLeft===null){say("Pilih nama nabi dahulu ya!");return}let correct={0:1,1:2,2:0};let fb=document.getElementById('matchFeedback');fb.classList.remove('hidden','good','bad');if(correct[matchLeft]===i){matched.add(matchLeft);document.getElementById('L'+matchLeft).classList.add('done');document.getElementById('R'+i).classList.add('done');document.getElementById('L'+matchLeft).disabled=true;document.getElementById('R'+i).disabled=true;score+=1;fb.classList.add('good');fb.textContent="Hebat! Pasanganmu benar. Kamu mendapat 1 bintang ⭐";say("Hebat!");}else{fb.classList.add('bad');fb.textContent="Belum cocok. Coba ingat kembali cerita para nabi, ya!";say("Ayo coba lagi")}matchLeft=null;document.querySelectorAll('#left button').forEach(b=>b.classList.remove('picked'));update();if(matched.size===3)fb.textContent="Luar biasa! Semua pasangan berhasil dicocokkan! 🌟"}
+function shuffleQuestions(list){
+ const shuffled=[...list];
+ for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+ return shuffled;
+}
+function showQuiz(){
+ tabs(4);qIndex=0;answered=new Set();quizCorrect=0;
+ activeQuestions=shuffleQuestions(questions).slice(0,10);
+ document.getElementById('content').innerHTML=`<h2>🎯 Kuis Bintang Anak Saleh</h2><p>Bank soal berisi 20 pertanyaan. Untuk setiap permainan, 10 soal dipilih secara acak. Pilih satu jawaban yang paling tepat. Setiap jawaban benar mendapat 1 bintang.</p><div class="pill">🎲 10 soal acak dari 20 soal</div><div id="questionArea"></div>`;renderQ();update()
+}
+function renderQ(){let q=activeQuestions[qIndex];document.getElementById('questionArea').innerHTML=`<div class="topline"><span class="pill">Soal ${qIndex+1} dari 10</span><span class="pill">⭐ ${score}</span></div><h3>${q.q}</h3><div class="choice-grid">${q.o.map((x,i)=>`<button class="choice" onclick="answer(${i})">${["A","B","C"][i]}. ${x}</button>`).join('')}</div><div id="qFeedback"></div>`}
+function answer(i){let q=activeQuestions[qIndex],buttons=document.querySelectorAll('.choice');buttons.forEach(b=>b.disabled=true);let fb=document.getElementById('qFeedback');answered.add(qIndex);if(i===q.a){score++;quizCorrect++;buttons[i].classList.add('correct');fb.className="feedback good";fb.textContent="🎉 Benar! "+q.why;say("Benar!");}else{buttons[i].classList.add('wrong');buttons[q.a].classList.add('correct');fb.className="feedback bad";fb.textContent="Tidak apa-apa, tetap semangat! "+q.why;say("Tetap semangat");}update();fb.innerHTML+=`<p><button class="primary" onclick="nextQ()">${qIndex===9?"Lihat Hasil":"Soal Berikutnya ➜"}</button></p>`}
+function nextQ(){if(qIndex<9){qIndex++;renderQ()}else finish()}
+function finish(){document.getElementById('game').classList.add('hidden');document.getElementById('finish').classList.remove('hidden');document.getElementById('certName').textContent=student;document.getElementById('certClass').textContent="Kelas: "+(kelas||"1");document.getElementById('finalScore').textContent="Nilai kuis: "+(quizCorrect*10)+"/100 • Bintang terkumpul: "+score;document.getElementById('finalStars').textContent="⭐".repeat(Math.min(score,10))+"☆".repeat(Math.max(0,10-score))}
+function say(msg){try{if(!('speechSynthesis'in window))return;let u=new SpeechSynthesisUtterance(msg);u.lang='id-ID';u.rate=.92;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+</script>
+</body>
+</html>
