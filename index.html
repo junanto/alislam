@@ -1,165 +1,1411 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petualangan Anak Saleh - Al-Islam Kelas 1</title>
-<style>
-:root{--ink:#26334a;--pink:#ff78ad;--yellow:#ffd95c;--blue:#62c8f5;--green:#78dca1;--purple:#a994ff;--paper:#fffdf5}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#c8f2ff,#fff0bd 55%,#ffe0ee);min-height:100vh}
-button,input{font:inherit}
-button{border:0;cursor:pointer;font-weight:800;border-radius:16px;padding:12px 18px;box-shadow:0 4px 0 rgba(38,51,74,.16);transition:.15s}
-button:hover{transform:translateY(-2px);filter:brightness(1.03)}
-button:active{transform:translateY(2px);box-shadow:none}
-.primary{background:#ffca48;color:#543b00}.blue{background:#69cdf5;color:#12394d}.pink{background:#ff8db8;color:#57213a}.green{background:#75dda0;color:#16472c}.soft{background:#edf5ff;color:#30445c}
-.wrap{max-width:980px;margin:auto;padding:18px}
-header{text-align:center;padding:14px 8px 8px}
-.logo{display:inline-block;background:#fff;border:4px solid #fff;border-radius:24px;padding:8px 20px;box-shadow:0 6px 0 #c4e7ee}
-h1{font-size:clamp(2rem,6vw,3.5rem);margin:6px 0;color:#275b9b;text-shadow:2px 3px #fff}
-.subtitle{font-weight:800;color:#9a4e83}
-.panel{background:rgba(255,255,255,.94);border:4px solid white;border-radius:26px;padding:clamp(16px,3vw,28px);box-shadow:0 8px 0 rgba(70,112,153,.13);margin:16px 0}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
-.hero-art{font-size:clamp(4rem,12vw,7rem);text-align:center;background:linear-gradient(145deg,#d6f5ff,#fff0c8);border-radius:24px;padding:20px}
-h2{margin:4px 0 12px;color:#285c9b}
-label{font-weight:800;display:block;margin:10px 0 5px}
-input{width:100%;padding:13px;border:2px solid #b9d7ec;border-radius:13px;background:#fff}
-.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
-.small{font-size:.92rem;color:#5d6b7d}
-.hidden{display:none!important}
-.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.pill{background:#eef7ff;padding:8px 13px;border-radius:99px;font-weight:800}
-.progress{height:13px;background:#e9eef6;border-radius:99px;overflow:hidden;margin:12px 0}
-.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#69d9a1,#5fc8f4);transition:width .3s}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.tab{background:#edf4ff;color:#345}.tab.active{background:#285c9b;color:white}
-.story{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
-.avatar{height:130px;border-radius:22px;display:grid;place-items:center;font-size:4.5rem;background:linear-gradient(145deg,#fff0bb,#d7f3ff);position:relative}
-.face-note{position:absolute;bottom:6px;font-size:.68rem;background:#fff9;padding:3px 7px;border-radius:9px}
-.fact{background:#fff8d9;border-left:7px solid #ffc94e;border-radius:14px;padding:13px;margin:12px 0}
-.lesson{background:#effcf3;border-radius:14px;padding:12px;margin-top:10px}
-.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
-.choice{background:#f1f7ff;border:3px solid #d7e8f7;box-shadow:none;min-height:76px;font-size:1rem}
-.choice.selected{border-color:#3987d4;background:#e0f4ff}
-.choice.correct{background:#dcffe8;border-color:#45bd73}
-.choice.wrong{background:#ffe1e8;border-color:#f06b88}
-.feedback{padding:12px;border-radius:14px;font-weight:800;margin:12px 0}
-.feedback.good{background:#ddffe9;color:#17623a}.feedback.bad{background:#ffe5eb;color:#9b2846}
-.match-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.match-col{display:grid;gap:9px}
-.match-item{background:#f3f7ff;border:2px solid #d5e6f8;box-shadow:none;text-align:left}
-.match-item.picked{border-color:#8a72e9;background:#f0eaff}
-.match-item.done{background:#dcffe8;border-color:#5ac582}
-.stars{font-size:2rem;letter-spacing:5px;color:#f5b900}
-.result{text-align:center}
-.certificate{border:7px double #f3c64e;border-radius:20px;padding:25px;background:#fffdf1}
-footer{text-align:center;padding:20px;color:#61748a;font-size:.85rem}
-@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{padding:8px}.story{grid-template-columns:1fr}.avatar{height:100px}.choice-grid{grid-template-columns:1fr}.match-list{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Ceria Al-Islam Kelas 1 SD</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka untuk teks anak-anak & Amiri untuk huruf Arab/Hijaiyah yang jelas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Pengaturan Font Utama & Arab */
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 45%, #7dd3fc 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .font-arab {
+            font-family: 'Amiri', serif;
+            line-height: 1.8;
+        }
+
+        /* Animasi Awan & Elemen Latar Belakang */
+        @keyframes floatCloud {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-10px) translateX(12px); }
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); }
+            50% { box-shadow: 0 0 0 14px rgba(250, 204, 21, 0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            70% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .animate-cloud { animation: floatCloud 6s ease-in-out infinite; }
+        .animate-cloud-delay { animation: floatCloud 8s ease-in-out 2s infinite; }
+        .animate-float { animation: floatSlow 3.5s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulseGlow 2s infinite; }
+        .animate-pop { animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        .animate-shake { animation: shake 0.4s ease-in-out; }
+
+        /* Tombol 3D Taktil Ramah Anak */
+        .btn-3d {
+            transition: all 0.12s ease;
+            border-bottom-width: 5px;
+        }
+        .btn-3d:active:not(:disabled) {
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+        }
+
+        /* Efek Kartu Memori 3D Flip */
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        /* Gelembung Mengambang pada Pos 2 */
+        @keyframes bubbleBob {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-14px) scale(1.04); }
+        }
+        .bubble-item {
+            animation: bubbleBob 3s ease-in-out infinite;
+            background: radial-gradient(circle at 30% 30%, #ffffff 0%, #e0f2fe 55%, #7dd3fc 100%);
+            box-shadow: inset 0 -6px 12px rgba(2, 132, 199, 0.25), 0 8px 16px rgba(14, 165, 233, 0.25);
+        }
+
+        /* Canvas Konfeti */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
 </head>
-<body>
-<div class="wrap">
-<header>
- <div class="logo">🌈 ⭐ 🕌 ⭐ 🌈</div>
- <h1>Petualangan Anak Saleh</h1>
- <div class="subtitle">Game Al-Islam • Kelas 1 SD</div>
-</header>
+<body class="text-sky-950 relative selection:bg-yellow-300">
 
-<section id="home" class="panel hero">
- <div>
-  <h2>Halo, Sahabat Saleh! 👋</h2>
-  <p>Yuk, bertualang mengenal kisah Nabi Adam a.s., Nabi Idris a.s., dan Nabi Nuh a.s. Selesaikan tantangan dan kumpulkan bintang!</p>
-  <label for="student">Nama siswa</label><input id="student" placeholder="Tuliskan namamu">
-  <label for="kelas">Kelas</label><input id="kelas" placeholder="Contoh: 1A">
-  <p class="small">Siapkan semangat terbaikmu. Kamu pasti bisa!</p>
-  <button class="primary" onclick="startGame()">🚀 MULAI PETUALANGAN</button>
- </div>
- <div class="hero-art">🧒🏻 📚 🚢<div style="font-size:1rem;font-weight:800">Belajar • Bermain • Berakhlak baik</div></div>
-</section>
+    <!-- Canvas Konfeti Perayaan -->
+    <canvas id="confetti-canvas"></canvas>
 
-<section id="game" class="hidden">
- <div class="panel">
-  <div class="topline"><span class="pill" id="playerTag">🌟 Sahabat Saleh</span><span class="pill">⭐ Bintang: <b id="stars">0</b></span></div>
-  <div class="progress"><span id="bar"></span></div>
-  <div class="tabs">
-   <button class="tab active" id="tab0" onclick="showLesson(0)">1. Nabi Adam</button>
-   <button class="tab" id="tab1" onclick="showLesson(1)">2. Nabi Idris</button>
-   <button class="tab" id="tab2" onclick="showLesson(2)">3. Nabi Nuh</button>
-   <button class="tab" id="tab3" onclick="showMatch()">4. Cocokkan</button>
-   <button class="tab" id="tab4" onclick="showQuiz()">5. Kuis</button>
-  </div>
-  <div id="content"></div>
- </div>
-</section>
+    <!-- Dekorasi Latar Belakang Awan & Matahari Biru Muda Ceria -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <!-- Matahari Tersenyum di Pojok Kanan Atas -->
+        <div class="absolute -top-6 -right-6 w-32 h-32 md:w-44 md:h-44 opacity-90 animate-float">
+            <svg viewBox="0 0 120 120" class="w-full h-full">
+                <circle cx="60" cy="60" r="36" fill="#fde047" stroke="#facc15" stroke-width="4"/>
+                <g stroke="#facc15" stroke-width="5" stroke-linecap="round">
+                    <line x1="60" y1="8" x2="60" y2="18"/>
+                    <line x1="60" y1="102" x2="60" y2="112"/>
+                    <line x1="8" y1="60" x2="18" y2="60"/>
+                    <line x1="102" y1="60" x2="112" y2="60"/>
+                    <line x1="23" y1="23" x2="30" y2="30"/>
+                    <line x1="90" y1="90" x2="97" y2="97"/>
+                    <line x1="97" y1="23" x2="90" y2="30"/>
+                    <line x1="30" y1="90" x2="23" y2="97"/>
+                </g>
+                <circle cx="50" cy="55" r="3.5" fill="#854d0e"/>
+                <circle cx="70" cy="55" r="3.5" fill="#854d0e"/>
+                <path d="M51 67 Q60 75 69 67" stroke="#854d0e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
 
-<section id="finish" class="panel result hidden">
- <div class="stars">🏆 ⭐ 🌟 ⭐ 🏆</div>
- <h2>Hebat Sekali, Sahabat Saleh!</h2>
- <div class="certificate">
-  <h2>🎖️ SERTIFIKAT ANAK SALEH 🎖️</h2>
-  <p>Dengan bangga diberikan kepada</p>
-  <h1 id="certName" style="font-size:2.2rem"></h1>
-  <p id="certClass"></p>
-  <p>Telah menyelesaikan Petualangan Al-Islam tentang Nabi Adam a.s., Nabi Idris a.s., dan Nabi Nuh a.s.</p>
-  <h2 id="finalScore"></h2>
-  <div class="stars" id="finalStars"></div>
-  <p>Teruslah menjadi anak yang jujur, rajin, sabar, dan taat kepada Allah.</p>
- </div>
- <p><button class="primary" onclick="window.print()">🖨️ Cetak Sertifikat</button> <button class="blue" onclick="location.reload()">🔄 Main Lagi</button></p>
-</section>
-<footer>Belajar dengan gembira • Jadilah anak jujur, rajin, sabar, dan taat 🌻</footer>
-</div>
-<script>
-const lessons=[
- {name:"Nabi Adam a.s.",emoji:"🌿",title:"Manusia pertama",story:"Nabi Adam a.s. adalah manusia pertama yang diciptakan Allah Swt. Allah menciptakan Nabi Adam dari tanah. Nabi Adam pernah melakukan kesalahan, lalu menyadarinya dan memohon ampun kepada Allah.",moral:"Jika berbuat salah, beranilah mengakui kesalahan, meminta maaf, dan memohon ampun kepada Allah.",traits:["Mengakui kesalahan","Meminta maaf","Memohon ampun kepada Allah"]},
- {name:"Nabi Idris a.s.",emoji:"📚",title:"Rajin belajar",story:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu. Beliau mengajarkan kebaikan dan menjadi teladan dalam ketekunan serta kejujuran.",moral:"Ayo rajin belajar, membaca, menulis, dan berkata jujur setiap hari.",traits:["Rajin belajar","Tekun","Jujur"]},
- {name:"Nabi Nuh a.s.",emoji:"🚢",title:"Nabi yang sabar",story:"Nabi Nuh a.s. mengajak kaumnya menyembah Allah. Beliau tetap sabar walaupun banyak yang tidak mau mendengarkan. Atas perintah Allah, Nabi Nuh membuat kapal besar. Allah menyelamatkan orang-orang beriman dari banjir besar.",moral:"Kita harus sabar, taat kepada Allah, mendengarkan nasihat baik, dan tidak mudah menyerah.",traits:["Sabar","Taat kepada Allah","Tidak mudah menyerah"]}
-];
-const questions=[
- {q:"Siapakah manusia pertama yang diciptakan Allah?",o:["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],a:0,why:"Nabi Adam a.s. adalah manusia pertama yang diciptakan Allah."},
- {q:"Nabi Adam a.s. diciptakan Allah dari ....",o:["Air","Tanah","Kayu"],a:1,why:"Allah menciptakan Nabi Adam a.s. dari tanah."},
- {q:"Apa yang sebaiknya kita lakukan jika berbuat salah?",o:["Menyalahkan teman","Berpura-pura tidak tahu","Mengakui kesalahan dan meminta maaf"],a:2,why:"Kita harus berani mengakui kesalahan dan meminta maaf."},
- {q:"Nabi yang dikenal sebagai teladan dalam ilmu dan ketekunan adalah ....",o:["Nabi Idris a.s.","Nabi Nuh a.s.","Nabi Adam a.s."],a:0,why:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu."},
- {q:"Sikap baik yang harus kita tiru dari Nabi Idris a.s. adalah ....",o:["Malas belajar","Rajin belajar","Suka berbohong"],a:1,why:"Kita harus rajin belajar dan tekun."},
- {q:"Jika berbicara kepada orang lain, kita harus ....",o:["Jujur","Berbohong","Mengejek"],a:0,why:"Anak saleh selalu berusaha berkata jujur."},
- {q:"Nabi yang membuat kapal besar atas perintah Allah adalah ....",o:["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],a:2,why:"Nabi Nuh a.s. membuat kapal besar atas perintah Allah."},
- {q:"Nabi Nuh a.s. mengajarkan kita untuk bersikap ....",o:["Sabar","Pemarah","Sombong"],a:0,why:"Nabi Nuh a.s. sangat sabar dalam mengajak kaumnya kepada kebaikan."},
- {q:"Ketika guru memberi nasihat yang baik, kita sebaiknya ....",o:["Mengabaikan","Mendengarkan","Berlari pergi"],a:1,why:"Mendengarkan nasihat baik adalah perilaku terpuji."},
- {q:"Kepada siapakah kita harus selalu taat?",o:["Allah Swt.","Mainan","Keinginan buruk"],a:0,why:"Kita harus taat kepada Allah Swt. dan menjalankan perintah-Nya."},
- {q:"Siapakah istri Nabi Adam a.s.?",o:["Hawa","Maryam","Asiyah"],a:0,why:"Istri Nabi Adam a.s. bernama Hawa."},
- {q:"Nabi Adam a.s. dan Hawa tinggal di ....",o:["Laut","Surga","Gunung"],a:1,why:"Nabi Adam a.s. dan Hawa tinggal di surga sebelum diturunkan ke bumi."},
- {q:"Apa yang dilakukan Nabi Adam setelah menyadari kesalahannya?",o:["Menyombongkan diri","Menyalahkan orang lain","Memohon ampun kepada Allah"],a:2,why:"Nabi Adam a.s. menyadari kesalahannya dan memohon ampun kepada Allah."},
- {q:"Sikap yang baik saat belajar adalah ....",o:["Tekun dan sungguh-sungguh","Mengganggu teman","Tidak memperhatikan"],a:0,why:"Kita meneladani ketekunan dengan belajar sungguh-sungguh."},
- {q:"Nabi Idris a.s. memberi teladan agar kita mencintai ....",o:["Pertengkaran","Ilmu dan kebaikan","Kemalasan"],a:1,why:"Nabi Idris a.s. dikenal sebagai nabi yang berilmu dan mengajarkan kebaikan."},
- {q:"Nabi Nuh a.s. mengajak kaumnya untuk ....",o:["Menyembah Allah","Menyembah kapal","Bertengkar"],a:0,why:"Nabi Nuh a.s. mengajak kaumnya menyembah Allah."},
- {q:"Apa yang dibuat Nabi Nuh atas perintah Allah?",o:["Rumah kecil","Jembatan","Kapal besar"],a:2,why:"Nabi Nuh a.s. membuat kapal besar atas perintah Allah."},
- {q:"Saat pekerjaan terasa sulit, kita sebaiknya ....",o:["Langsung menyerah","Tetap berusaha dan sabar","Marah kepada teman"],a:1,why:"Kisah Nabi Nuh a.s. mengajarkan kita untuk sabar dan tidak mudah menyerah."},
- {q:"Siapa yang menyelamatkan Nabi Nuh dan orang-orang beriman dari banjir besar?",o:["Allah Swt.","Penduduk kota","Pedagang"],a:0,why:"Allah Swt. menyelamatkan Nabi Nuh dan orang-orang beriman."},
- {q:"Kapal Nabi Nuh a.s. digunakan saat terjadi ....",o:["Musim kemarau","Banjir besar","Musim panen"],a:1,why:"Allah memerintahkan Nabi Nuh membuat kapal untuk menghadapi banjir besar."}
-];
-let student="",kelas="",score=0,quizCorrect=0,answered=new Set(),qIndex=0,matchLeft=null,matched=new Set(),quizDone=false,activeQuestions=[];
-function startGame(){student=document.getElementById('student').value.trim();kelas=document.getElementById('kelas').value.trim();if(!student){alert("Yuk, tulis namamu dulu!");return}document.getElementById('home').classList.add('hidden');document.getElementById('game').classList.remove('hidden');document.getElementById('playerTag').textContent="🌟 "+student+" • "+(kelas||"Kelas 1");showLesson(0)}
-function update(){document.getElementById('stars').textContent=score;document.getElementById('bar').style.width=(answered.size/10*100)+"%"}
-function tabs(n){for(let i=0;i<5;i++)document.getElementById('tab'+i).classList.toggle('active',i===n)}
-function showLesson(i){tabs(i);let l=lessons[i];document.getElementById('content').innerHTML=`<div class="story"><div class="avatar">${l.emoji}<span class="face-note">Ilustrasi simbolik</span></div><div><h2>${l.name}</h2><h3>${l.title} ✨</h3><p>${l.story}</p></div></div><div class="fact"><b>💡 Pesan kebaikan</b><br>${l.moral}</div><div class="lesson"><b>🌟 Teladan yang bisa kita lakukan:</b><ul>${l.traits.map(t=>`<li>${t}</li>`).join('')}</ul></div><p><button class="primary" onclick="${i<2?`showLesson(${i+1})`:'showMatch()'}">Lanjut ➜</button></p>`}
-function showMatch(){tabs(3);matchLeft=null;matched.clear();const left=["Nabi Adam a.s.","Nabi Idris a.s.","Nabi Nuh a.s."],right=["Sabar dan tidak mudah menyerah","Berani mengakui kesalahan","Rajin belajar dan tekun"];document.getElementById('content').innerHTML=`<h2>🧩 Permainan Cocokkan Pasangan</h2><p>Pilih nama nabi di sebelah kiri, lalu pilih sifat teladannya di sebelah kanan.</p><div class="match-list"><div class="match-col" id="left">${left.map((x,i)=>`<button class="match-item" id="L${i}" onclick="pickLeft(${i})">${x}</button>`).join('')}</div><div class="match-col" id="right">${right.map((x,i)=>`<button class="match-item" id="R${i}" onclick="pickRight(${i})">${x}</button>`).join('')}</div></div><div id="matchFeedback" class="feedback hidden"></div><p><button class="primary" onclick="showQuiz()">Lanjut ke Kuis ➜</button></p>`}
-function pickLeft(i){if(matched.has(i))return;matchLeft=i;document.querySelectorAll('#left button').forEach(b=>b.classList.remove('picked'));document.getElementById('L'+i).classList.add('picked')}
-function pickRight(i){if(matchLeft===null){say("Pilih nama nabi dahulu ya!");return}let correct={0:1,1:2,2:0};let fb=document.getElementById('matchFeedback');fb.classList.remove('hidden','good','bad');if(correct[matchLeft]===i){matched.add(matchLeft);document.getElementById('L'+matchLeft).classList.add('done');document.getElementById('R'+i).classList.add('done');document.getElementById('L'+matchLeft).disabled=true;document.getElementById('R'+i).disabled=true;score+=1;fb.classList.add('good');fb.textContent="Hebat! Pasanganmu benar. Kamu mendapat 1 bintang ⭐";say("Hebat!");}else{fb.classList.add('bad');fb.textContent="Belum cocok. Coba ingat kembali cerita para nabi, ya!";say("Ayo coba lagi")}matchLeft=null;document.querySelectorAll('#left button').forEach(b=>b.classList.remove('picked'));update();if(matched.size===3)fb.textContent="Luar biasa! Semua pasangan berhasil dicocokkan! 🌟"}
-function shuffleQuestions(list){
- const shuffled=[...list];
- for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
- return shuffled;
-}
-function showQuiz(){
- tabs(4);qIndex=0;answered=new Set();quizCorrect=0;
- activeQuestions=shuffleQuestions(questions).slice(0,10);
- document.getElementById('content').innerHTML=`<h2>🎯 Kuis Bintang Anak Saleh</h2><p>Bank soal berisi 20 pertanyaan. Untuk setiap permainan, 10 soal dipilih secara acak. Pilih satu jawaban yang paling tepat. Setiap jawaban benar mendapat 1 bintang.</p><div class="pill">🎲 10 soal acak dari 20 soal</div><div id="questionArea"></div>`;renderQ();update()
-}
-function renderQ(){let q=activeQuestions[qIndex];document.getElementById('questionArea').innerHTML=`<div class="topline"><span class="pill">Soal ${qIndex+1} dari 10</span><span class="pill">⭐ ${score}</span></div><h3>${q.q}</h3><div class="choice-grid">${q.o.map((x,i)=>`<button class="choice" onclick="answer(${i})">${["A","B","C"][i]}. ${x}</button>`).join('')}</div><div id="qFeedback"></div>`}
-function answer(i){let q=activeQuestions[qIndex],buttons=document.querySelectorAll('.choice');buttons.forEach(b=>b.disabled=true);let fb=document.getElementById('qFeedback');answered.add(qIndex);if(i===q.a){score++;quizCorrect++;buttons[i].classList.add('correct');fb.className="feedback good";fb.textContent="🎉 Benar! "+q.why;say("Benar!");}else{buttons[i].classList.add('wrong');buttons[q.a].classList.add('correct');fb.className="feedback bad";fb.textContent="Tidak apa-apa, tetap semangat! "+q.why;say("Tetap semangat");}update();fb.innerHTML+=`<p><button class="primary" onclick="nextQ()">${qIndex===9?"Lihat Hasil":"Soal Berikutnya ➜"}</button></p>`}
-function nextQ(){if(qIndex<9){qIndex++;renderQ()}else finish()}
-function finish(){document.getElementById('game').classList.add('hidden');document.getElementById('finish').classList.remove('hidden');document.getElementById('certName').textContent=student;document.getElementById('certClass').textContent="Kelas: "+(kelas||"1");document.getElementById('finalScore').textContent="Nilai kuis: "+(quizCorrect*10)+"/100 • Bintang terkumpul: "+score;document.getElementById('finalStars').textContent="⭐".repeat(Math.min(score,10))+"☆".repeat(Math.max(0,10-score))}
-function say(msg){try{if(!('speechSynthesis'in window))return;let u=new SpeechSynthesisUtterance(msg);u.lang='id-ID';u.rate=.92;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
-</script>
+        <!-- Awan Kiri Atas -->
+        <svg class="absolute top-12 left-4 w-32 md:w-48 text-white/80 animate-cloud" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 L155,80 C175,80 190,65 190,48 C190,32 178,19 162,17 C156,6 144,0 130,0 C114,0 100,9 94,22 C88,19 82,18 75,18 C56,18 40,32 38,50 C22,52 10,64 10,78 C10,79 25,80 45,80 Z"/>
+        </svg>
+
+        <!-- Awan Tengah -->
+        <svg class="absolute top-44 right-12 w-28 md:w-40 text-white/70 animate-cloud-delay" viewBox="0 0 200 100" fill="currentColor">
+            <path d="M45,80 L155,80 C175,80 190,65 190,48 C190,32 178,19 162,17 C156,6 144,0 130,0 C114,0 100,9 94,22 C88,19 82,18 75,18 C56,18 40,32 38,50 C22,52 10,64 10,78 C10,79 25,80 45,80 Z"/>
+        </svg>
+
+        <!-- Gelombang Laut/Bukit Biru Muda di Bawah -->
+        <svg class="absolute bottom-0 left-0 w-full h-24 md:h-32 text-sky-300/60" viewBox="0 0 1440 160" preserveAspectRatio="none" fill="currentColor">
+            <path d="M0,64 C320,140 520,0 840,64 C1160,128 1320,40 1440,64 L1440,160 L0,160 Z"/>
+        </svg>
+    </div>
+
+    <!-- HEADER / BAR STATUS PEMAIN -->
+    <header id="top-bar" class="hidden relative z-20 max-w-5xl mx-auto pt-3 px-3 sm:px-6">
+        <div class="bg-white/90 backdrop-blur-md border-2 border-sky-300 rounded-3xl px-4 py-2.5 shadow-lg flex flex-wrap items-center justify-between gap-2">
+            <!-- Info Petualang -->
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-2xl bg-sky-500 text-white flex items-center justify-center font-bold text-xl shadow-inner">
+                    🧭
+                </div>
+                <div>
+                    <p class="text-xs text-sky-600 font-semibold leading-none">Petualang Cilik</p>
+                    <p id="hud-name" class="font-bold text-sky-950 text-base sm:text-lg leading-tight">Siswa Hebat</p>
+                </div>
+            </div>
+
+            <!-- Skor & Bintang -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="bg-amber-100 border-2 border-amber-300 rounded-2xl px-3 py-1 flex items-center gap-1.5">
+                    <span class="text-lg">⭐</span>
+                    <span id="hud-stars" class="font-bold text-amber-800 text-sm sm:text-base">0 / 12</span>
+                </div>
+                <div class="bg-sky-100 border-2 border-sky-300 rounded-2xl px-3 py-1 flex items-center gap-1.5">
+                    <span class="text-lg">💎</span>
+                    <span id="hud-score" class="font-bold text-sky-800 text-sm sm:text-base">0 Poin</span>
+                </div>
+                <button onclick="goToMap()" id="btn-home-map" title="Kembali ke Peta" class="hidden bg-sky-500 hover:bg-sky-600 text-white font-bold px-3 py-1.5 rounded-2xl border-b-4 border-sky-700 text-sm transition">
+                    🗺️ Peta
+                </button>
+                <button onclick="toggleMute()" id="btn-mute" title="Suara" class="bg-white hover:bg-sky-50 border-2 border-sky-300 rounded-2xl w-10 h-10 flex items-center justify-center text-lg shadow-sm">
+                    🔊
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="relative z-10 max-w-5xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
+
+        <!-- ========================================================= -->
+        <!-- SCREEN 1: LAYAR PEMBUKA (WELCOME SCREEN)                  -->
+        <!-- ========================================================= -->
+        <section id="screen-welcome" class="min-h-[85vh] flex flex-col items-center justify-center text-center animate-pop">
+            <div class="bg-white/95 backdrop-blur-md border-4 border-sky-300 rounded-[2.2rem] p-6 sm:p-10 max-w-xl w-full shadow-2xl relative">
+                <!-- Lencana Atas -->
+                <div class="inline-block bg-sky-500 text-white font-bold text-xs sm:text-sm px-4 py-1.5 rounded-full mb-3 shadow">
+                    ✨ MATERI AL-ISLAM KELAS 1 SD ✨
+                </div>
+
+                <!-- Ilustrasi SVG Karakter & Pulau Ilmu -->
+                <div class="w-32 h-32 mx-auto mb-3 animate-float">
+                    <svg viewBox="0 0 160 160" class="w-full h-full">
+                        <!-- Pulau Biru-Hijau -->
+                        <ellipse cx="80" cy="135" rx="68" ry="18" fill="#38bdf8"/>
+                        <path d="M25,132 Q80,95 135,132 Z" fill="#4ade80"/>
+                        <!-- Masjid Ceria -->
+                        <rect x="48" y="78" width="64" height="46" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+                        <path d="M48,78 C48,46 112,46 112,78 Z" fill="#0ea5e9" stroke="#0284c7" stroke-width="3"/>
+                        <!-- Bulan Sabit & Bintang di Puncak Kubah -->
+                        <line x1="80" y1="36" x2="80" y2="52" stroke="#f59e0b" stroke-width="3"/>
+                        <circle cx="80" cy="30" r="7" fill="#facc15"/>
+                        <circle cx="83" cy="28" r="5.5" fill="#e0f2fe"/>
+                        <!-- Pintu Masjid -->
+                        <path d="M70,124 L70,102 C70,94 90,94 90,102 L90,124 Z" fill="#fde047" stroke="#0284c7" stroke-width="2.5"/>
+                        <!-- Menara Kecil -->
+                        <rect x="34" y="68" width="12" height="56" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+                        <polygon points="32,68 40,54 48,68" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
+                        <rect x="114" y="68" width="12" height="56" rx="3" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+                        <polygon points="112,68 120,54 128,68" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl font-bold text-sky-900 mb-2 leading-tight">
+                    Petualangan Ceria<br>
+                    <span class="text-sky-500">Pulau Ilmu Al-Islam</span>
+                </h1>
+                <p class="text-sky-700 text-base sm:text-lg mb-6">
+                    Ayo jelajahi 4 Pos Petualangan seru: Huruf Hijaiyah, Iman kepada Allah, Kalimat Tayyibah, Syahadat, dan Kisah Nabi!
+                </p>
+
+                <!-- Input Nama Siswa -->
+                <div class="mb-6 text-left">
+                    <label for="input-player-name" class="block text-sky-900 font-bold mb-2 text-base sm:text-lg text-center">
+                        Siapa nama petualang hebat hari ini? 👇
+                    </label>
+                    <input 
+                        type="text" 
+                        id="input-player-name" 
+                        maxlength="22"
+                        placeholder="Ketik namamu di sini..." 
+                        class="w-full text-center text-xl font-bold text-sky-950 bg-sky-50 border-3 border-sky-300 focus:border-sky-500 focus:outline-none rounded-2xl py-3.5 px-4 shadow-inner placeholder:text-sky-300"
+                    >
+                </div>
+
+                <button 
+                    onclick="startAdventure()" 
+                    class="w-full btn-3d bg-amber-400 hover:bg-amber-500 border-amber-600 text-amber-950 font-bold text-xl sm:text-2xl py-4 px-8 rounded-2xl shadow-lg flex items-center justify-center gap-3 animate-pulse-glow"
+                >
+                    <span>🚀 MULAI PETUALANGAN!</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SCREEN 2: PETA PETUALANGAN (ADVENTURE MAP)                -->
+        <!-- ========================================================= -->
+        <section id="screen-map" class="hidden animate-pop">
+            <div class="text-center mb-5">
+                <h2 class="text-2xl sm:text-3xl font-bold text-sky-950 drop-shadow-sm">
+                    🗺️ Peta Petualangan Pulau Ilmu
+                </h2>
+                <p class="text-sky-800 font-medium text-sm sm:text-base">
+                    Pilih pos petualangan di bawah ini dan kumpulkan semua bintangnya!
+                </p>
+            </div>
+
+            <!-- Grid 4 Pos Petualangan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
+                
+                <!-- POS 1: 20 Soal Pilihan Ganda -->
+                <div class="bg-white/95 border-4 border-sky-400 rounded-3xl p-5 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-sky-100 rounded-full opacity-70"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-sky-500 text-white text-xs font-bold px-3 py-1 rounded-full">POS 1 • UTAMA</span>
+                            <span id="stars-pos-1" class="text-lg">☆☆☆</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-14 h-14 rounded-2xl bg-sky-100 border-2 border-sky-300 flex items-center justify-center text-3xl shrink-0">
+                                🏝️
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-sky-950">Jelajah Kuis Petualangan</h3>
+                                <p class="text-xs sm:text-sm text-sky-700 font-medium">20 Soal Pilihan Ganda (A, B, C) semua materi Al-Islam</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openStage(1)" class="mt-4 w-full btn-3d bg-sky-500 hover:bg-sky-600 border-sky-700 text-white font-bold text-lg py-3 rounded-2xl">
+                        🧭 Jelajahi Pos 1
+                    </button>
+                </div>
+
+                <!-- POS 2: Tangkap Bintang Hijaiyah & Ciptaan Allah -->
+                <div class="bg-white/95 border-4 border-cyan-400 rounded-3xl p-5 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-cyan-100 rounded-full opacity-70"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full">POS 2 • TANGKAP TARGET</span>
+                            <span id="stars-pos-2" class="text-lg">☆☆☆</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-100 border-2 border-cyan-300 flex items-center justify-center text-3xl shrink-0">
+                                🫧
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-sky-950">Gelembung Hijaiyah & Alam</h3>
+                                <p class="text-xs sm:text-sm text-sky-700 font-medium">Ketuk gelembung harakat & ciptaan Allah yang tepat!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openStage(2)" class="mt-4 w-full btn-3d bg-cyan-500 hover:bg-cyan-600 border-cyan-700 text-white font-bold text-lg py-3 rounded-2xl">
+                        ✨ Mainkan Pos 2
+                    </button>
+                </div>
+
+                <!-- POS 3: Susun Rukun Islam & Kalimat Tayyibah -->
+                <div class="bg-white/95 border-4 border-teal-400 rounded-3xl p-5 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-teal-100 rounded-full opacity-70"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">POS 3 • SUSUN URUTAN</span>
+                            <span id="stars-pos-3" class="text-lg">☆☆☆</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-14 h-14 rounded-2xl bg-teal-100 border-2 border-teal-300 flex items-center justify-center text-3xl shrink-0">
+                                🧩
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-sky-950">Jembatan Rukun & Tayyibah</h3>
+                                <p class="text-xs sm:text-sm text-sky-700 font-medium">Susun urutan 5 Rukun Islam & bacaan Kalimat Tayyibah</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openStage(3)" class="mt-4 w-full btn-3d bg-teal-500 hover:bg-teal-600 border-teal-700 text-white font-bold text-lg py-3 rounded-2xl">
+                        🧱 Susun Pos 3
+                    </button>
+                </div>
+
+                <!-- POS 4: Kartu Memori Kisah Nabi -->
+                <div class="bg-white/95 border-4 border-indigo-400 rounded-3xl p-5 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-20 h-20 bg-indigo-100 rounded-full opacity-70"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full">POS 4 • KARTU MEMORI</span>
+                            <span id="stars-pos-4" class="text-lg">☆☆☆</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-14 h-14 rounded-2xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-3xl shrink-0">
+                                🚢
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-sky-950">Harta Karun Kisah Nabi</h3>
+                                <p class="text-xs sm:text-sm text-sky-700 font-medium">Pasangkan kartu Nabi Adam, Nuh, Idris & Syahadat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="openStage(4)" class="mt-4 w-full btn-3d bg-indigo-500 hover:bg-indigo-600 border-indigo-700 text-white font-bold text-lg py-3 rounded-2xl">
+                        🃏 Buka Pos 4
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tombol Lihat Sertifikat Akhir -->
+            <div class="text-center">
+                <button onclick="showFinalSummary()" class="btn-3d bg-amber-400 hover:bg-amber-500 border-amber-600 text-amber-950 font-bold text-lg px-8 py-3.5 rounded-2xl shadow-lg inline-flex items-center gap-2">
+                    <span>🏆 Lihat Piala & Hasil Petualangan</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- POS 1: JELAJAH KUIS PETUALANGAN (20 SOAL PILIHAN GANDA)   -->
+        <!-- ========================================================= -->
+        <section id="stage-1" class="hidden animate-pop">
+            <div class="bg-white/95 border-4 border-sky-400 rounded-[2rem] p-5 sm:p-8 shadow-2xl max-w-3xl mx-auto">
+                <!-- Header Progres Soal -->
+                <div class="flex items-center justify-between gap-3 mb-3">
+                    <span id="q-topic-badge" class="bg-sky-100 text-sky-800 border border-sky-300 font-bold text-xs sm:text-sm px-3.5 py-1 rounded-full">
+                        Topik: Huruf Hijaiyah
+                    </span>
+                    <span id="q-counter" class="font-bold text-sky-900 text-base sm:text-lg">
+                        Soal 1 / 20
+                    </span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full h-4 bg-sky-100 rounded-full overflow-hidden mb-6 border border-sky-200">
+                    <div id="q-progress-bar" class="h-full bg-gradient-to-r from-sky-400 to-cyan-400 transition-all duration-300" style="width: 5%"></div>
+                </div>
+
+                <!-- Kotak Pertanyaan -->
+                <div class="bg-sky-50 border-2 border-sky-200 rounded-3xl p-5 sm:p-6 mb-6 text-center">
+                    <div id="q-visual" class="text-4xl sm:text-5xl mb-3"></div>
+                    <h3 id="q-text" class="text-xl sm:text-2xl font-bold text-sky-950 leading-snug">
+                        Memuat soal...
+                    </h3>
+                </div>
+
+                <!-- 3 Opsi Jawaban (A, B, C) -->
+                <div id="q-options" class="grid grid-cols-1 gap-3.5">
+                    <!-- Diisi lewat JS -->
+                </div>
+
+                <!-- Kotak Umpan Balik (Feedback) -->
+                <div id="q-feedback" class="hidden mt-5 rounded-2xl p-4 border-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div class="flex items-center gap-3 text-center sm:text-left">
+                        <span id="q-feedback-icon" class="text-3xl">🎉</span>
+                        <div>
+                            <p id="q-feedback-title" class="font-bold text-lg"></p>
+                            <p id="q-feedback-desc" class="text-sm"></p>
+                        </div>
+                    </div>
+                    <button onclick="nextQuizQuestion()" class="btn-3d bg-sky-500 hover:bg-sky-600 border-sky-700 text-white font-bold px-6 py-2.5 rounded-xl shrink-0 w-full sm:w-auto">
+                        Lanjut ➡️
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- POS 2: TANGKAP GELEMBUNG HIJAIYAH & CIPTAAN ALLAH         -->
+        <!-- ========================================================= -->
+        <section id="stage-2" class="hidden animate-pop">
+            <div class="bg-white/95 border-4 border-cyan-400 rounded-[2rem] p-5 sm:p-7 shadow-2xl max-w-4xl mx-auto">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                        <span class="bg-cyan-100 text-cyan-800 font-bold text-xs px-3 py-1 rounded-full">POS 2 • MISI TANGKAP TARGET</span>
+                        <h3 id="s2-mission-title" class="text-xl sm:text-2xl font-bold text-sky-950 mt-1">
+                            Misi 1: Ketuk semua huruf berharakat Kasrah (bunyi "i")!
+                        </h3>
+                    </div>
+                    <div class="bg-amber-100 border-2 border-amber-300 px-4 py-1.5 rounded-2xl font-bold text-amber-900">
+                        Target: <span id="s2-progress">0 / 4</span>
+                    </div>
+                </div>
+
+                <!-- Area Kolam Gelembung -->
+                <div id="s2-arena" class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gradient-to-b from-sky-100 to-cyan-100 border-3 border-cyan-300 rounded-3xl p-4 sm:p-6 min-h-[300px] items-center justify-items-center">
+                    <!-- Gelembung diisi lewat JS -->
+                </div>
+
+                <!-- Pesan & Lanjut Ronde -->
+                <div id="s2-feedback" class="mt-4 text-center min-h-[44px] flex items-center justify-center">
+                    <p id="s2-hint" class="text-sky-700 font-medium text-base">
+                        💡 Sentuh atau klik gelembung yang sesuai perintah di atas!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- POS 3: SUSUN RUKUN ISLAM & KALIMAT TAYYIBAH               -->
+        <!-- ========================================================= -->
+        <section id="stage-3" class="hidden animate-pop">
+            <div class="bg-white/95 border-4 border-teal-400 rounded-[2rem] p-5 sm:p-7 shadow-2xl max-w-3xl mx-auto">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="bg-teal-100 text-teal-800 font-bold text-xs px-3 py-1 rounded-full">POS 3 • JEMBATAN RUKUN ISLAM</span>
+                    <span id="s3-step-label" class="font-bold text-teal-800">Bagian 1 / 2</span>
+                </div>
+
+                <!-- Bagian 1: Urutkan 5 Rukun Islam -->
+                <div id="s3-part-1">
+                    <h3 class="text-xl sm:text-2xl font-bold text-sky-950 mb-1">
+                        🧱 Susun 5 Rukun Islam secara Urut!
+                    </h3>
+                    <p class="text-sky-700 text-sm sm:text-base mb-4">
+                        Ketuk kotak Rukun Islam di bawah secara berurutan dari nomor <strong>1 sampai 5</strong>!
+                    </p>
+
+                    <!-- Slot Urutan 1-5 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5 mb-5" id="s3-slots">
+                        <div class="bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center">
+                            <span class="text-xs font-bold text-sky-500">Ke-1</span>
+                            <span id="slot-0" class="font-bold text-sky-950 text-sm">...</span>
+                        </div>
+                        <div class="bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center">
+                            <span class="text-xs font-bold text-sky-500">Ke-2</span>
+                            <span id="slot-1" class="font-bold text-sky-950 text-sm">...</span>
+                        </div>
+                        <div class="bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center">
+                            <span class="text-xs font-bold text-sky-500">Ke-3</span>
+                            <span id="slot-2" class="font-bold text-sky-950 text-sm">...</span>
+                        </div>
+                        <div class="bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center">
+                            <span class="text-xs font-bold text-sky-500">Ke-4</span>
+                            <span id="slot-3" class="font-bold text-sky-950 text-sm">...</span>
+                        </div>
+                        <div class="bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center">
+                            <span class="text-xs font-bold text-sky-500">Ke-5</span>
+                            <span id="slot-4" class="font-bold text-sky-950 text-sm">...</span>
+                        </div>
+                    </div>
+
+                    <!-- Pilihan Acak Rukun Islam -->
+                    <div id="s3-choices" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Diisi lewat JS -->
+                    </div>
+                </div>
+
+                <!-- Bagian 2: Pilih Kalimat Tayyibah yang Tepat -->
+                <div id="s3-part-2" class="hidden">
+                    <h3 class="text-xl sm:text-2xl font-bold text-sky-950 mb-1">
+                        💬 Pilih Bacaan Kalimat Tayyibah yang Tepat!
+                    </h3>
+                    <p class="text-sky-700 text-sm sm:text-base mb-4">
+                        Baca cerita singkatnya, lalu ketuk kalimat yang harus diucapkan!
+                    </p>
+
+                    <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-5 text-center mb-5">
+                        <div id="s3-tayyibah-emoji" class="text-5xl mb-2">🍱</div>
+                        <p id="s3-tayyibah-story" class="text-lg sm:text-xl font-bold text-sky-950">
+                            Aisyah baru saja selesai makan siang dengan lahap. Kalimat apa yang diucapkan Aisyah?
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button onclick="answerTayyibah('basmalah')" class="btn-3d bg-sky-500 hover:bg-sky-600 border-sky-700 text-white p-4 rounded-2xl text-center">
+                            <span class="font-arab text-2xl block mb-1">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+                            <span class="font-bold text-lg">Bismillahirrahmanirrahim</span>
+                        </button>
+                        <button onclick="answerTayyibah('alhamdulillah')" class="btn-3d bg-emerald-500 hover:bg-emerald-600 border-emerald-700 text-white p-4 rounded-2xl text-center">
+                            <span class="font-arab text-2xl block mb-1">اَلْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِيْنَ</span>
+                            <span class="font-bold text-lg">Alhamdulillahi rabbil 'alamin</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="s3-msg" class="mt-4 text-center font-bold text-base min-h-[28px] text-teal-800"></div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- POS 4: KARTU MEMORI KISAH NABI & SYAHADAT                 -->
+        <!-- ========================================================= -->
+        <section id="stage-4" class="hidden animate-pop">
+            <div class="bg-white/95 border-4 border-indigo-400 rounded-[2rem] p-5 sm:p-7 shadow-2xl max-w-4xl mx-auto">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                        <span class="bg-indigo-100 text-indigo-800 font-bold text-xs px-3 py-1 rounded-full">POS 4 • KARTU MEMORI</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-sky-950 mt-1">
+                            🃏 Pasangkan Kartu Kisah Nabi & Istilah Islam!
+                        </h3>
+                    </div>
+                    <div class="bg-indigo-100 border-2 border-indigo-300 px-4 py-1.5 rounded-2xl font-bold text-indigo-900">
+                        Pasangan: <span id="s4-pairs">0 / 6</span>
+                    </div>
+                </div>
+
+                <!-- Grid 12 Kartu (6 Pasang) -->
+                <div id="s4-grid" class="grid grid-cols-3 sm:grid-cols-4 gap-3 sm:gap-4">
+                    <!-- Kartu dibuat lewat JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- SCREEN 3: LAYAR PIALA & HASIL AKHIR                       -->
+        <!-- ========================================================= -->
+        <section id="screen-summary" class="hidden animate-pop">
+            <div class="bg-white/95 border-4 border-amber-400 rounded-[2.2rem] p-6 sm:p-10 max-w-2xl mx-auto text-center shadow-2xl">
+                <div class="text-6xl sm:text-7xl mb-3 animate-float">🏆</div>
+                <span class="bg-amber-100 text-amber-800 border border-amber-300 font-bold text-xs sm:text-sm px-4 py-1 rounded-full">
+                    PETUALANGAN SELESAI!
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-sky-950 mt-3 mb-1">
+                    Hebat Sekali, <span id="sum-name" class="text-sky-600">Petualang</span>!
+                </h2>
+                <p id="sum-badge-title" class="text-lg sm:text-xl font-bold text-amber-600 mb-6">
+                    🌟 Juara Penjelajah Pulau Ilmu Al-Islam 🌟
+                </p>
+
+                <!-- Kartu Statistik Skor -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-sky-50 border-2 border-sky-200 rounded-3xl p-4">
+                        <p class="text-sm text-sky-700 font-semibold">Total Poin</p>
+                        <p id="sum-score" class="text-3xl sm:text-4xl font-bold text-sky-600">0</p>
+                    </div>
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-3xl p-4">
+                        <p class="text-sm text-amber-700 font-semibold">Bintang Terkumpul</p>
+                        <p id="sum-stars" class="text-3xl sm:text-4xl font-bold text-amber-500">0 / 12 ⭐</p>
+                    </div>
+                </div>
+
+                <!-- Rincian Per Pos -->
+                <div class="bg-sky-50/80 border-2 border-sky-200 rounded-2xl p-4 mb-6 text-left space-y-2 text-sm sm:text-base">
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-sky-900">🏝️ Pos 1 (20 Kuis Pilihan Ganda):</span>
+                        <span id="sum-pos1" class="font-bold text-sky-700">☆☆☆</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-sky-900">🫧 Pos 2 (Gelembung Hijaiyah & Alam):</span>
+                        <span id="sum-pos2" class="font-bold text-sky-700">☆☆☆</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-sky-900">🧱 Pos 3 (Jembatan Rukun & Tayyibah):</span>
+                        <span id="sum-pos3" class="font-bold text-sky-700">☆☆☆</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-semibold text-sky-900">🃏 Pos 4 (Kartu Memori Kisah Nabi):</span>
+                        <span id="sum-pos4" class="font-bold text-sky-700">☆☆☆</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <button onclick="goToMap()" class="btn-3d bg-sky-500 hover:bg-sky-600 border-sky-700 text-white font-bold text-lg px-6 py-3.5 rounded-2xl">
+                        🗺️ Kembali ke Peta
+                    </button>
+                    <button onclick="resetFullGame()" class="btn-3d bg-amber-400 hover:bg-amber-500 border-amber-600 text-amber-950 font-bold text-lg px-6 py-3.5 rounded-2xl">
+                        🔄 Main Lagi dari Awal
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- SCRIPT LOGIKA GAME, AUDIO, DAN BANK SOAL                  -->
+    <!-- ========================================================= -->
+    <script>
+        /* -----------------------------------------------------------
+           1. SISTEM SUARA SINTETIS (WEB AUDIO API) - TANPA FILE LUAR
+           ----------------------------------------------------------- */
+        let audioCtx = null;
+        let isMuted = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function toggleMute() {
+            isMuted = !isMuted;
+            document.getElementById('btn-mute').textContent = isMuted ? '🔇' : '🔊';
+        }
+
+        function playTone(freq, type, duration, delay = 0) {
+            if (isMuted) return;
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
+                gain.gain.setValueAtTime(0.18, audioCtx.currentTime + delay);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + delay);
+                osc.stop(audioCtx.currentTime + delay + duration);
+            } catch (e) {}
+        }
+
+        function sfxClick() { playTone(520, 'sine', 0.08); }
+        function sfxCorrect() {
+            playTone(523.25, 'triangle', 0.15, 0);     // C5
+            playTone(659.25, 'triangle', 0.15, 0.1);   // E5
+            playTone(783.99, 'triangle', 0.25, 0.2);   // G5
+        }
+        function sfxWrong() {
+            playTone(260, 'sawtooth', 0.18, 0);
+            playTone(210, 'sawtooth', 0.25, 0.14);
+        }
+        function sfxFanfare() {
+            playTone(523.25, 'triangle', 0.15, 0);
+            playTone(659.25, 'triangle', 0.15, 0.12);
+            playTone(783.99, 'triangle', 0.15, 0.24);
+            playTone(1046.5, 'triangle', 0.45, 0.36);
+        }
+
+        /* -----------------------------------------------------------
+           2. EFEK KONFETI PERAYAAN
+           ----------------------------------------------------------- */
+        function launchConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const colors = ['#38bdf8', '#facc15', '#4ade80', '#f472b6', '#818cf8', '#fb923c'];
+            const pieces = Array.from({ length: 75 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                w: Math.random() * 10 + 6,
+                h: Math.random() * 6 + 4,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                vy: Math.random() * 3 + 2.5,
+                vx: Math.random() * 2 - 1,
+                angle: Math.random() * 360
+            }));
+
+            let frame = 0;
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach(p => {
+                    p.y += p.vy;
+                    p.x += p.vx;
+                    p.angle += 4;
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.angle * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    ctx.restore();
+                });
+                frame++;
+                if (frame < 130) {
+                    requestAnimationFrame(draw);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+            draw();
+        }
+
+        /* -----------------------------------------------------------
+           3. STATE PERMAINAN GLOBAL
+           ----------------------------------------------------------- */
+        const gameState = {
+            playerName: 'Petualang Cilik',
+            score: 0,
+            stars: { 1: 0, 2: 0, 3: 0, 4: 0 }
+        };
+
+        function updateHUD() {
+            document.getElementById('hud-name').textContent = gameState.playerName;
+            document.getElementById('hud-score').textContent = `${gameState.score} Poin`;
+            const totalStars = gameState.stars[1] + gameState.stars[2] + gameState.stars[3] + gameState.stars[4];
+            document.getElementById('hud-stars').textContent = `${totalStars} / 12`;
+
+            for (let i = 1; i <= 4; i++) {
+                const s = gameState.stars[i];
+                const starStr = '⭐'.repeat(s) + '☆'.repeat(3 - s);
+                const el = document.getElementById(`stars-pos-${i}`);
+                if (el) el.textContent = starStr;
+            }
+        }
+
+        function hideAllScreens() {
+            ['screen-welcome', 'screen-map', 'stage-1', 'stage-2', 'stage-3', 'stage-4', 'screen-summary'].forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+        }
+
+        function startAdventure() {
+            sfxClick();
+            const rawName = document.getElementById('input-player-name').value.trim();
+            gameState.playerName = rawName || 'Petualang Cilik';
+            document.getElementById('top-bar').classList.remove('hidden');
+            goToMap();
+        }
+
+        function goToMap() {
+            sfxClick();
+            hideAllScreens();
+            document.getElementById('btn-home-map').classList.add('hidden');
+            document.getElementById('screen-map').classList.remove('hidden');
+            updateHUD();
+        }
+
+        function openStage(num) {
+            sfxClick();
+            hideAllScreens();
+            document.getElementById('btn-home-map').classList.remove('hidden');
+            document.getElementById(`stage-${num}`).classList.remove('hidden');
+
+            if (num === 1) initStage1();
+            if (num === 2) initStage2();
+            if (num === 3) initStage3();
+            if (num === 4) initStage4();
+        }
+
+        /* -----------------------------------------------------------
+           4. POS 1: 20 SOAL PILIHAN GANDA BARU (3 OPSI A, B, C)
+              *Semua soal baru & berbeda dari draf soal sebelumnya*
+           ----------------------------------------------------------- */
+        const quizQuestions20 = [
+            // Materi 1: Huruf Hijaiyah (Soal 1 - 4)
+            {
+                topic: "1. Huruf Hijaiyah",
+                visual: `<span class="font-arab text-6xl text-sky-600">تَ</span>`,
+                question: "Tanda baca garis miring di atas huruf hijaiyah yang berbunyi 'a' disebut harakat ....",
+                options: ["Fathah", "Kasrah", "Dammah"],
+                answer: 0,
+                explain: "Harakat fathah berada di atas huruf dan berbunyi 'a', seperti تَ dibaca 'ta'."
+            },
+            {
+                topic: "1. Huruf Hijaiyah",
+                visual: `<span class="font-arab text-6xl text-sky-600">جِ - حُ</span>`,
+                question: "Huruf hijaiyah di atas dibaca ....",
+                options: ["Ja - Hi", "Ji - Hu", "Ju - Ha"],
+                answer: 1,
+                explain: "جِ berharakat kasrah dibaca 'Ji', dan حُ berharakat dammah dibaca 'Hu'."
+            },
+            {
+                topic: "1. Huruf Hijaiyah",
+                visual: `<span class="font-arab text-5xl text-sky-600">كَ - تَ - بَ</span>`,
+                question: "Jika huruf-huruf hijaiyah di atas dibaca berurutan dari kanan, bunyinya adalah ....",
+                options: ["Ba - ta - ka", "Ka - ta - ba", "Ta - ka - ba"],
+                answer: 1,
+                explain: "Membaca huruf hijaiyah dimulai dari sebelah kanan: كَ (ka) - تَ (ta) - بَ (ba)."
+            },
+            {
+                topic: "1. Huruf Hijaiyah",
+                visual: `<span class="font-arab text-6xl text-sky-600">ي</span>`,
+                question: "Huruf hijaiyah yang berada pada urutan paling akhir adalah huruf ....",
+                options: ["Mim", "Nun", "Ya"],
+                answer: 2,
+                explain: "Huruf hijaiyah diawali dengan Alif (ا) dan diakhiri dengan huruf Ya (ي)."
+            },
+
+            // Materi 2: Iman kepada Allah (Soal 5 - 8)
+            {
+                topic: "2. Iman kepada Allah",
+                visual: "🏔️ 🌊 🌳",
+                question: "Gunung yang tinggi, lautan luas, dan pepohonan adalah bukti adanya ....",
+                options: ["Allah Swt.", "Tukang bangunan", "Raja manusia"],
+                answer: 0,
+                explain: "Semua alam semesta beserta isinya adalah ciptaan Allah Swt."
+            },
+            {
+                topic: "2. Iman kepada Allah",
+                visual: "🚗 🏠 ✈️",
+                question: "Manakah di bawah ini yang merupakan benda buatan manusia?",
+                options: ["Bintang dan bulan", "Mobil dan rumah", "Ikan dan burung"],
+                answer: 1,
+                explain: "Mobil dan rumah dibuat oleh manusia, sedangkan bintang dan hewan ciptaan Allah."
+            },
+            {
+                topic: "2. Iman kepada Allah",
+                visual: "🌟 2️⃣ 🌟",
+                question: "Rukun iman yang kedua adalah iman kepada ....",
+                options: ["Kitab-kitab Allah", "Malaikat-malaikat Allah", "Hari Kiamat"],
+                answer: 1,
+                explain: "Urutan Rukun Iman: 1. Allah, 2. Malaikat, 3. Kitab, 4. Rasul, 5. Hari Kiamat, 6. Qada & Qadar."
+            },
+            {
+                topic: "2. Iman kepada Allah",
+                visual: "🤲 💖",
+                question: "Cara kita bersyukur atas mata dan telinga yang diberikan Allah Swt. adalah ....",
+                options: ["Melihat dan mendengar hal yang baik", "Mengejek teman sekelas", "Malas belajar mengaji"],
+                answer: 0,
+                explain: "Anggota tubuh ciptaan Allah harus digunakan untuk kebaikan."
+            },
+
+            // Materi 3: Kalimat Tayyibah (Soal 9 - 12)
+            {
+                topic: "3. Kalimat Tayyibah",
+                visual: "🤧 ✨",
+                question: "Saat kita bersin, kalimat tayyibah yang baik kita ucapkan adalah ....",
+                options: ["Alhamdulillah", "Bismillah", "Subhanallah"],
+                answer: 0,
+                explain: "Ketika bersin kita mengucap 'Alhamdulillah' sebagai rasa syukur kepada Allah."
+            },
+            {
+                topic: "3. Kalimat Tayyibah",
+                visual: "👕 👟",
+                question: "Sebelum memakai baju atau berangkat ke sekolah, sebaiknya kita membaca ....",
+                options: ["Alhamdulillahi rabbil 'alamin", "Bismillahirrahmanirrahim", "Innalillahi"],
+                answer: 1,
+                explain: "Setiap kegiatan baik diawali dengan membaca Basmalah (Bismillahirrahmanirrahim)."
+            },
+            {
+                topic: "3. Kalimat Tayyibah",
+                visual: `<span class="font-arab text-4xl text-emerald-600">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</span>`,
+                question: "Arti dari bacaan Basmalah di atas adalah ....",
+                options: ["Segala puji bagi Allah", "Dengan menyebut nama Allah Yang Maha Pengasih, Maha Penyayang", "Allah Maha Besar"],
+                answer: 1,
+                explain: "Basmalah artinya: Dengan menyebut nama Allah Yang Maha Pengasih, Maha Penyayang."
+            },
+            {
+                topic: "3. Kalimat Tayyibah",
+                visual: "🏆 😊",
+                question: "Ahmad berhasil mendapatkan nilai bagus di sekolah. Ahmad mengucapkan ....",
+                options: ["Alhamdulillah", "Bismillah", "Maaf"],
+                answer: 0,
+                explain: "Alhamdulillah (kalimat tahmid) diucapkan saat mendapat keberhasilan atau nikmat."
+            },
+
+            // Materi 4: Kalimat Syahadat & Rukun Islam (Soal 13 - 16)
+            {
+                topic: "4. Kalimat Syahadat",
+                visual: "☝️ 🕌",
+                question: "Syahadat tauhid berisi persaksian bahwa tidak ada Tuhan selain ....",
+                options: ["Nabi", "Malaikat", "Allah Swt."],
+                answer: 2,
+                explain: "Asyhadu an laa ilaaha illallah artinya aku bersaksi tiada Tuhan selain Allah."
+            },
+            {
+                topic: "4. Kalimat Syahadat",
+                visual: `<span class="font-arab text-3xl text-sky-700">وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُوْلُ اللّٰهِ</span>`,
+                question: "Bacaan di atas adalah bunyi syahadat ....",
+                options: ["Tauhid", "Rasul", "Iman"],
+                answer: 1,
+                explain: "Wa asyhadu anna Muhammadan Rasulullah adalah syahadat rasul."
+            },
+            {
+                topic: "4. Kalimat Syahadat",
+                visual: "🕌 🧎‍♂️",
+                question: "Rukun Islam yang kedua setelah membaca dua kalimat syahadat adalah ....",
+                options: ["Mendirikan salat", "Membayar zakat", "Berpuasa Ramadan"],
+                answer: 0,
+                explain: "Rukun Islam ke-1 Syahadat, dan Rukun Islam ke-2 adalah Salat lima waktu."
+            },
+            {
+                topic: "4. Kalimat Syahadat",
+                visual: "🌙 🍽️",
+                question: "Menahan lapar dan haus dari subuh hingga magrib di bulan Ramadan adalah rukun Islam ke-....",
+                options: ["Tiga", "Empat", "Lima"],
+                answer: 1,
+                explain: "Puasa di bulan Ramadan merupakan Rukun Islam yang keempat."
+            },
+
+            // Materi 5: Kisah Nabi (Soal 17 - 20)
+            {
+                topic: "5. Kisah Nabi",
+                visual: "🌿 📝",
+                question: "Allah Swt. mengajari Nabi Adam a.s. berbagai pengetahuan tentang ....",
+                options: ["Nama-nama benda", "Cara membuat kapal", "Cara menjahit baju"],
+                answer: 0,
+                explain: "Allah mengajari Nabi Adam a.s. nama-nama benda yang ada di alam."
+            },
+            {
+                topic: "5. Kisah Nabi",
+                visual: "🤲 😢",
+                question: "Ketika Nabi Adam a.s. dan Hawa menyadari kesalahannya, mereka segera ....",
+                options: ["Bersembunyi dari Allah", "Memohon ampun dan bertobat", "Menyalahkan orang lain"],
+                answer: 1,
+                explain: "Nabi Adam a.s. segera bertobat dan memohon ampun kepada Allah Swt."
+            },
+            {
+                topic: "5. Kisah Nabi",
+                visual: "🪡 ✍️",
+                question: "Nabi yang pertama kali pandai menulis dengan pena dan menjahit pakaian adalah Nabi ....",
+                options: ["Nuh a.s.", "Adam a.s.", "Idris a.s."],
+                answer: 2,
+                explain: "Nabi Idris a.s. dikenal cerdas, rajin belajar, pandai menulis, dan menjahit."
+            },
+            {
+                topic: "5. Kisah Nabi",
+                visual: "🚢 🌊",
+                question: "Kaum Nabi Nuh a.s. yang tidak mau beriman akhirnya tenggelam karena ....",
+                options: ["Banjir bandang yang besar", "Gunung meletus", "Angin topan di gurun"],
+                answer: 0,
+                explain: "Allah mendatangkan banjir besar kepada kaum Nabi Nuh a.s. yang durhaka."
+            }
+        ];
+
+        let qIndex = 0;
+        let qCorrectCount = 0;
+        let qAnswered = false;
+
+        function initStage1() {
+            qIndex = 0;
+            qCorrectCount = 0;
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            qAnswered = false;
+            const item = quizQuestions20[qIndex];
+            document.getElementById('q-topic-badge').textContent = item.topic;
+            document.getElementById('q-counter').textContent = `Soal ${qIndex + 1} / ${quizQuestions20.length}`;
+            document.getElementById('q-progress-bar').style.width = `${((qIndex + 1) / quizQuestions20.length) * 100}%`;
+            document.getElementById('q-visual').innerHTML = item.visual;
+            document.getElementById('q-text').textContent = item.question;
+
+            const feedbackBox = document.getElementById('q-feedback');
+            feedbackBox.classList.add('hidden');
+
+            const optionsContainer = document.getElementById('q-options');
+            optionsContainer.innerHTML = '';
+
+            const letters = ['A', 'B', 'C'];
+            item.options.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "btn-3d w-full text-left bg-white hover:bg-sky-50 border-2 border-b-4 border-sky-300 rounded-2xl p-4 flex items-center gap-3.5 transition";
+                btn.innerHTML = `
+                    <span class="w-10 h-10 rounded-xl bg-sky-500 text-white font-bold text-lg flex items-center justify-center shrink-0">${letters[idx]}</span>
+                    <span class="font-bold text-sky-950 text-base sm:text-lg">${optText}</span>
+                `;
+                btn.onclick = () => selectQuizOption(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectQuizOption(selectedIdx, btnElement) {
+            if (qAnswered) return;
+            qAnswered = true;
+
+            const item = quizQuestions20[qIndex];
+            const buttons = document.getElementById('q-options').querySelectorAll('button');
+            const feedbackBox = document.getElementById('q-feedback');
+            const fIcon = document.getElementById('q-feedback-icon');
+            const fTitle = document.getElementById('q-feedback-title');
+            const fDesc = document.getElementById('q-feedback-desc');
+
+            buttons.forEach((b, i) => {
+                b.disabled = true;
+                if (i === item.answer) {
+                    b.classList.remove('bg-white', 'border-sky-300');
+                    b.classList.add('bg-emerald-100', 'border-emerald-500');
+                }
+            });
+
+            if (selectedIdx === item.answer) {
+                sfxCorrect();
+                qCorrectCount++;
+                gameState.score += 10;
+                updateHUD();
+                feedbackBox.className = "mt-5 rounded-2xl p-4 border-2 border-emerald-400 bg-emerald-50 text-emerald-900 flex flex-col sm:flex-row items-center justify-between gap-3 animate-pop";
+                fIcon.textContent = "🌟";
+                fTitle.textContent = "MasyaAllah, Jawabanmu Benar! (+10 Poin)";
+                fDesc.textContent = item.explain;
+            } else {
+                sfxWrong();
+                btnElement.classList.remove('bg-white', 'border-sky-300');
+                btnElement.classList.add('bg-rose-100', 'border-rose-500', 'animate-shake');
+                feedbackBox.className = "mt-5 rounded-2xl p-4 border-2 border-amber-400 bg-amber-50 text-amber-950 flex flex-col sm:flex-row items-center justify-between gap-3 animate-pop";
+                fIcon.textContent = "💡";
+                fTitle.textContent = "Hampir Tepat! Ayo Perhatikan:";
+                fDesc.textContent = item.explain;
+            }
+        }
+
+        function nextQuizQuestion() {
+            sfxClick();
+            qIndex++;
+            if (qIndex < quizQuestions20.length) {
+                renderQuizQuestion();
+            } else {
+                // Hitung bintang Pos 1 (maks 3 bintang)
+                const earnedStars = qCorrectCount >= 17 ? 3 : (qCorrectCount >= 11 ? 2 : 1);
+                if (earnedStars > gameState.stars[1]) gameState.stars[1] = earnedStars;
+                sfxFanfare();
+                launchConfetti();
+                goToMap();
+            }
+        }
+
+        /* -----------------------------------------------------------
+           5. POS 2: TANGKAP GELEMBUNG HIJAIYAH & CIPTAAN ALLAH
+           ----------------------------------------------------------- */
+        const stage2Rounds = [
+            {
+                title: 'Misi 1/2: Ketuk 4 huruf berharakat Kasrah (bunyi "i")!',
+                targetCount: 4,
+                bubbles: [
+                    { label: 'بِ', sub: 'bi', isTarget: true, isArab: true },
+                    { label: 'تَ', sub: 'ta', isTarget: false, isArab: true },
+                    { label: 'ثِ', sub: 'tsi', isTarget: true, isArab: true },
+                    { label: 'جُ', sub: 'ju', isTarget: false, isArab: true },
+                    { label: 'حِ', sub: 'hi', isTarget: true, isArab: true },
+                    { label: 'خَ', sub: 'kha', isTarget: false, isArab: true },
+                    { label: 'دِ', sub: 'di', isTarget: true, isArab: true },
+                    { label: 'رُ', sub: 'ru', isTarget: false, isArab: true }
+                ]
+            },
+            {
+                title: 'Misi 2/2: Ketuk 4 benda Ciptaan Allah Swt.!',
+                targetCount: 4,
+                bubbles: [
+                    { label: '☀️', sub: 'Matahari', isTarget: true, isArab: false },
+                    { label: '🚲', sub: 'Sepeda', isTarget: false, isArab: false },
+                    { label: '🐟', sub: 'Ikan', isTarget: true, isArab: false },
+                    { label: '✏️', sub: 'Pensil', isTarget: false, isArab: false },
+                    { label: '🌧️', sub: 'Hujan', isTarget: true, isArab: false },
+                    { label: '🪑', sub: 'Kursi', isTarget: false, isArab: false },
+                    { label: '🌴', sub: 'Pohon', isTarget: true, isArab: false },
+                    { label: '📱', sub: 'Telepon', isTarget: false, isArab: false }
+                ]
+            }
+        ];
+
+        let s2RoundIdx = 0;
+        let s2Caught = 0;
+
+        function initStage2() {
+            s2RoundIdx = 0;
+            renderStage2Round();
+        }
+
+        function renderStage2Round() {
+            const round = stage2Rounds[s2RoundIdx];
+            s2Caught = 0;
+            document.getElementById('s2-mission-title').textContent = round.title;
+            document.getElementById('s2-progress').textContent = `0 / ${round.targetCount}`;
+            document.getElementById('s2-hint').textContent = "💡 Sentuh gelembung yang sesuai perintah di atas!";
+
+            const arena = document.getElementById('s2-arena');
+            arena.innerHTML = '';
+
+            // Acak posisi gelembung
+            const shuffled = [...round.bubbles].sort(() => Math.random() - 0.5);
+
+            shuffled.forEach((b, idx) => {
+                const btn = document.createElement('button');
+                btn.style.animationDelay = `${(idx % 4) * 0.35}s`;
+                btn.className = "bubble-item w-24 h-24 sm:w-28 sm:h-28 rounded-full border-3 border-white flex flex-col items-center justify-center transition transform hover:scale-105 active:scale-95 cursor-pointer";
+                btn.innerHTML = `
+                    <span class="${b.isArab ? 'font-arab text-4xl sm:text-5xl text-sky-900 leading-none' : 'text-3xl sm:text-4xl'}">${b.label}</span>
+                    <span class="text-xs font-bold text-sky-700 mt-1">${b.isArab ? '' : b.sub}</span>
+                `;
+                btn.onclick = () => handleBubbleTap(btn, b, round);
+                arena.appendChild(btn);
+            });
+        }
+
+        function handleBubbleTap(btn, bubble, round) {
+            if (btn.disabled) return;
+
+            if (bubble.isTarget) {
+                sfxCorrect();
+                btn.disabled = true;
+                btn.classList.remove('bubble-item');
+                btn.classList.add('bg-emerald-400', 'border-emerald-600', 'scale-90', 'opacity-85');
+                btn.innerHTML = `<span class="text-3xl">✅</span><span class="text-xs font-bold text-white">${bubble.sub}</span>`;
+
+                s2Caught++;
+                gameState.score += 10;
+                updateHUD();
+                document.getElementById('s2-progress').textContent = `${s2Caught} / ${round.targetCount}`;
+                document.getElementById('s2-hint').textContent = `🎉 Benar! "${bubble.sub}" tepat sekali!`;
+
+                if (s2Caught >= round.targetCount) {
+                    setTimeout(() => {
+                        s2RoundIdx++;
+                        if (s2RoundIdx < stage2Rounds.length) {
+                            renderStage2Round();
+                        } else {
+                            gameState.stars[2] = 3;
+                            sfxFanfare();
+                            launchConfetti();
+                            goToMap();
+                        }
+                    }, 800);
+                }
+            } else {
+                sfxWrong();
+                btn.classList.add('animate-shake', 'border-rose-400');
+                document.getElementById('s2-hint').textContent = `😅 Ups, "${bubble.sub}" bukan targetnya. Coba cari yang lain!`;
+                setTimeout(() => btn.classList.remove('animate-shake', 'border-rose-400'), 500);
+            }
+        }
+
+        /* -----------------------------------------------------------
+           6. POS 3: SUSUN RUKUN ISLAM & KALIMAT TAYYIBAH
+           ----------------------------------------------------------- */
+        const rukunIslamOrder = [
+            "1. Mengucapkan Syahadat",
+            "2. Mendirikan Salat",
+            "3. Membayar Zakat",
+            "4. Berpuasa Ramadan",
+            "5. Ibadah Haji (jika mampu)"
+        ];
+
+        const tayyibahCases = [
+            {
+                emoji: "🍱",
+                story: "Aisyah baru saja selesai makan siang dengan lahap. Kalimat apa yang diucapkan Aisyah?",
+                correct: "alhamdulillah"
+            },
+            {
+                emoji: "📖",
+                story: "Umar hendak membuka buku dan mulai belajar membaca Al-Qur'an. Kalimat apa yang dibaca Umar?",
+                correct: "basmalah"
+            },
+            {
+                emoji: "🎁",
+                story: "Fatimah diberi hadiah tas sekolah baru oleh Ayah. Kalimat apa yang diucapkan Fatimah?",
+                correct: "alhamdulillah"
+            }
+        ];
+
+        let s3CurrentStep = 0;
+        let s3TayyibahIdx = 0;
+
+        function initStage3() {
+            s3CurrentStep = 0;
+            s3TayyibahIdx = 0;
+            document.getElementById('s3-part-1').classList.remove('hidden');
+            document.getElementById('s3-part-2').classList.add('hidden');
+            document.getElementById('s3-step-label').textContent = "Bagian 1 / 2";
+            document.getElementById('s3-msg').textContent = "";
+
+            for (let i = 0; i < 5; i++) {
+                const slot = document.getElementById(`slot-${i}`);
+                slot.textContent = "...";
+                slot.parentElement.className = "bg-sky-50 border-2 border-dashed border-sky-300 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center";
+            }
+
+            const choicesBox = document.getElementById('s3-choices');
+            choicesBox.innerHTML = '';
+
+            // Tampilkan teks tanpa nomor di tombol pilihan
+            const items = rukunIslamOrder.map((text, idx) => ({
+                cleanText: text.replace(/^\d+\.\s/, ''),
+                orderIndex: idx
+            })).sort(() => Math.random() - 0.5);
+
+            items.forEach(item => {
+                const btn = document.createElement('button');
+                btn.className = "btn-3d bg-teal-500 hover:bg-teal-600 border-teal-700 text-white font-bold text-base p-3.5 rounded-2xl";
+                btn.textContent = item.cleanText;
+                btn.onclick = () => pickRukunIslam(btn, item);
+                choicesBox.appendChild(btn);
+            });
+        }
+
+        function pickRukunIslam(btn, item) {
+            if (item.orderIndex === s3CurrentStep) {
+                sfxCorrect();
+                const slot = document.getElementById(`slot-${s3CurrentStep}`);
+                slot.textContent = item.cleanText;
+                slot.parentElement.className = "bg-emerald-100 border-2 border-emerald-500 rounded-2xl p-3 text-center min-h-[76px] flex flex-col justify-center animate-pop";
+                btn.disabled = true;
+                btn.classList.add('opacity-30', 'cursor-not-allowed');
+
+                gameState.score += 10;
+                updateHUD();
+                s3CurrentStep++;
+                document.getElementById('s3-msg').textContent = `✅ Bagus! Rukun Islam ke-${s3CurrentStep} tersusun!`;
+
+                if (s3CurrentStep === 5) {
+                    setTimeout(() => {
+                        document.getElementById('s3-part-1').classList.add('hidden');
+                        document.getElementById('s3-part-2').classList.remove('hidden');
+                        document.getElementById('s3-step-label').textContent = "Bagian 2 / 2";
+                        document.getElementById('s3-msg').textContent = "";
+                        renderTayyibahCase();
+                    }, 900);
+                }
+            } else {
+                sfxWrong();
+                btn.classList.add('animate-shake');
+                document.getElementById('s3-msg').textContent = `🤔 Belum tepat, cari Rukun Islam yang ke-${s3CurrentStep + 1} ya!`;
+                setTimeout(() => btn.classList.remove('animate-shake'), 400);
+            }
+        }
+
+        function renderTayyibahCase() {
+            const c = tayyibahCases[s3TayyibahIdx];
+            document.getElementById('s3-tayyibah-emoji').textContent = c.emoji;
+            document.getElementById('s3-tayyibah-story').textContent = c.story;
+        }
+
+        function answerTayyibah(choice) {
+            const c = tayyibahCases[s3TayyibahIdx];
+            if (choice === c.correct) {
+                sfxCorrect();
+                gameState.score += 10;
+                updateHUD();
+                document.getElementById('s3-msg').textContent = "🌟 Hebat! Bacaanmu sangat tepat!";
+                s3TayyibahIdx++;
+
+                setTimeout(() => {
+                    if (s3TayyibahIdx < tayyibahCases.length) {
+                        document.getElementById('s3-msg').textContent = "";
+                        renderTayyibahCase();
+                    } else {
+                        gameState.stars[3] = 3;
+                        sfxFanfare();
+                        launchConfetti();
+                        goToMap();
+                    }
+                }, 850);
+            } else {
+                sfxWrong();
+                document.getElementById('s3-msg').textContent = "💡 Ingat: Basmalah sebelum mulai, Alhamdulillah sesudah selesai!";
+            }
+        }
+
+        /* -----------------------------------------------------------
+           7. POS 4: KARTU MEMORI KISAH NABI & SYAHADAT
+           ----------------------------------------------------------- */
+        const memoryPairsData = [
+            { pairId: 1, icon: "🌿", text: "Nabi Adam a.s." },
+            { pairId: 1, icon: "👤", text: "Manusia Pertama" },
+            { pairId: 2, icon: "🚢", text: "Nabi Nuh a.s." },
+            { pairId: 2, icon: "🌊", text: "Membuat Kapal Besar" },
+            { pairId: 3, icon: "✍️", text: "Nabi Idris a.s." },
+            { pairId: 3, icon: "📚", text: "Rajin Menulis & Belajar" },
+            { pairId: 4, icon: "☝️", text: "Kalimat Syahadat" },
+            { pairId: 4, icon: "2️⃣", text: "Jumlahnya Ada Dua" },
+            { pairId: 5, icon: "🤲", text: "Alhamdulillah" },
+            { pairId: 5, icon: "✨", text: "Segala Puji Bagi Allah" },
+            { pairId: 6, icon: "📖", text: "Huruf Hijaiyah" },
+            { pairId: 6, icon: "⬅️", text: "Ditulis dari Kanan" }
+        ];
+
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let lockBoard = false;
+
+        function initStage4() {
+            flippedCards = [];
+            matchedPairs = 0;
+            lockBoard = false;
+            document.getElementById('s4-pairs').textContent = "0 / 6";
+
+            const grid = document.getElementById('s4-grid');
+            grid.innerHTML = '';
+
+            const deck = [...memoryPairsData].sort(() => Math.random() - 0.5);
+
+            deck.forEach((cardData) => {
+                const cardWrapper = document.createElement('div');
+                cardWrapper.className = "perspective-1000 h-28 sm:h-32 cursor-pointer";
+                cardWrapper.dataset.pairId = cardData.pairId;
+
+                cardWrapper.innerHTML = `
+                    <div class="card-inner preserve-3d relative w-full h-full">
+                        <!-- Sisi Depan Tertutup -->
+                        <div class="backface-hidden absolute inset-0 bg-gradient-to-br from-sky-400 to-indigo-500 border-3 border-white rounded-2xl shadow-md flex flex-col items-center justify-center text-white">
+                            <span class="text-3xl sm:text-4xl">⭐</span>
+                            <span class="text-xs font-bold mt-1">Buka</span>
+                        </div>
+                        <!-- Sisi Belakang Terbuka -->
+                        <div class="backface-hidden rotate-y-180 absolute inset-0 bg-amber-50 border-3 border-amber-400 rounded-2xl shadow-md p-2 flex flex-col items-center justify-center text-center">
+                            <span class="text-2xl sm:text-3xl mb-1">${cardData.icon}</span>
+                            <span class="font-bold text-sky-950 text-xs sm:text-sm leading-tight">${cardData.text}</span>
+                        </div>
+                    </div>
+                `;
+
+                cardWrapper.onclick = () => flipMemoryCard(cardWrapper);
+                grid.appendChild(cardWrapper);
+            });
+        }
+
+        function flipMemoryCard(cardEl) {
+            if (lockBoard) return;
+            const inner = cardEl.querySelector('.card-inner');
+            if (inner.classList.contains('rotate-y-180')) return;
+
+            sfxClick();
+            inner.classList.add('rotate-y-180');
+            flippedCards.push(cardEl);
+
+            if (flippedCards.length === 2) {
+                lockBoard = true;
+                const [first, second] = flippedCards;
+                const isMatch = first.dataset.pairId === second.dataset.pairId;
+
+                if (isMatch) {
+                    sfxCorrect();
+                    matchedPairs++;
+                    gameState.score += 15;
+                    updateHUD();
+                    document.getElementById('s4-pairs').textContent = `${matchedPairs} / 6`;
+
+                    first.querySelector('.rotate-y-180').classList.replace('bg-amber-50', 'bg-emerald-100');
+                    first.querySelector('.rotate-y-180').classList.replace('border-amber-400', 'border-emerald-500');
+                    second.querySelector('.rotate-y-180').classList.replace('bg-amber-50', 'bg-emerald-100');
+                    second.querySelector('.rotate-y-180').classList.replace('border-amber-400', 'border-emerald-500');
+
+                    flippedCards = [];
+                    lockBoard = false;
+
+                    if (matchedPairs === 6) {
+                        setTimeout(() => {
+                            gameState.stars[4] = 3;
+                            sfxFanfare();
+                            launchConfetti();
+                            goToMap();
+                        }, 800);
+                    }
+                } else {
+                    sfxWrong();
+                    setTimeout(() => {
+                        first.querySelector('.card-inner').classList.remove('rotate-y-180');
+                        second.querySelector('.card-inner').classList.remove('rotate-y-180');
+                        flippedCards = [];
+                        lockBoard = false;
+                    }, 950);
+                }
+            }
+        }
+
+        /* -----------------------------------------------------------
+           8. LAYAR RINGKASAN AKHIR & RESET
+           ----------------------------------------------------------- */
+        function showFinalSummary() {
+            sfxFanfare();
+            launchConfetti();
+            hideAllScreens();
+            document.getElementById('btn-home-map').classList.remove('hidden');
+            document.getElementById('screen-summary').classList.remove('hidden');
+
+            const totalStars = gameState.stars[1] + gameState.stars[2] + gameState.stars[3] + gameState.stars[4];
+            document.getElementById('sum-name').textContent = gameState.playerName;
+            document.getElementById('sum-score').textContent = `${gameState.score} Poin`;
+            document.getElementById('sum-stars').textContent = `${totalStars} / 12 ⭐`;
+
+            for (let i = 1; i <= 4; i++) {
+                const s = gameState.stars[i];
+                document.getElementById(`sum-pos${i}`).textContent = '⭐'.repeat(s) + '☆'.repeat(3 - s);
+            }
+        }
+
+        function resetFullGame() {
+            sfxClick();
+            gameState.score = 0;
+            gameState.stars = { 1: 0, 2: 0, 3: 0, 4: 0 };
+            updateHUD();
+            goToMap();
+        }
+    </script>
 </body>
 </html>
